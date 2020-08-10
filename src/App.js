@@ -15,8 +15,8 @@ class App extends React.Component {
 
 render(){
 
-  fetch('http://api.open-notify.org/iss-now.json').then(val=>val.json()).then(cords=> {
-    this.setState({latitude:cords.iss_position.latitude,longitude:cords.iss_position.longitude});
+  fetch('https://api.wheretheiss.at/v1/satellites/25544').then(val=>val.json()).then(cords=> {
+    this.setState({latitude:cords.latitude,longitude:cords.longitude});
   })
     return (
       <div className = 'tc'>
